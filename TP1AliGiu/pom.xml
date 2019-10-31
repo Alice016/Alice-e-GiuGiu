@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.edu.iff</groupId>
-    <artifactId>Tp1joyceegiulia</artifactId>
+    <artifactId>TP1AliGiu</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>Tp1Aliceegiulia</name>
+    <name>TP1AliGiu</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

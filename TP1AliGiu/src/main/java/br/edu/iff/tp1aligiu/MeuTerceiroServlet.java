@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.edu.iff.tp1aligiu;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aluno
  */
-public class meu1oservlet extends HttpServlet {
+public class MeuTerceiroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,11 +29,19 @@ public class meu1oservlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String nome = request.getParameter ("nome");
-       String sobrenome = request.getParameter ("sobrenome");
-       String nomeCompleto = nome+" "+sobrenome;
-       System.out.println ("nome completo: "+nomeCompleto);
-       response.sendRedirect("teste.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet MeuTerceiroServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet MeuTerceiroServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
