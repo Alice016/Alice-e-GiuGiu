@@ -1,5 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<div style="background: black;color:white">
+<div style="background: black;color:pink">
          <h1>MEU SITE</h1>
+         <h4>Aprendendo Java Web</h4>
      </div>
