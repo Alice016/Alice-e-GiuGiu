@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.tp1aligiu;
+package br.edu.iff.TP1AliGiu.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
