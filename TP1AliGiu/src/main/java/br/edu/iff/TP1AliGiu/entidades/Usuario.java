@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.TP1AliGiu.utilidades;
+package br.edu.iff.TP1AliGiu.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
