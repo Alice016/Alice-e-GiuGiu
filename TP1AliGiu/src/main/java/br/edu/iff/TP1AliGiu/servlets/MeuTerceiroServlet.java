@@ -5,12 +5,17 @@
  */
 package br.edu.iff.TP1AliGiu.servlets;
 
+import br.edu.iff.TP1AliGiu.entidades.Usuario;
+import br.edu.iff.TP1AliGiu.utilidades.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -31,16 +36,25 @@ public class MeuTerceiroServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MeuTerceiroServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MeuTerceiroServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String nome = request.getParameter("nome");
+            String sobrenome = request.getParameter("sobrenome");
+            String nomeCompleto = nome + " " + sobrenome;
+            System.out.println("Nome Completo: " + nomeCompleto);
+            String senha = request.getParameter("senha");
+            Usuario user = new Usuario();
+            user.setNome (nomeCompleto);
+            user.setSenha (senha);
+            Double aleatorio = Math.random();
+            BigDecimal id = new BigDecimal (aleatorio);
+            user.setIdUsuario(id);
+            
+            Session SessionBD = HibernateUtil.getSession();
+            Transaction tr = SessionBD.getTransaction();
+            SessionBD.save(user);
+            tr.commit();
+            SessionBD.close();
+            
+            response.sendRedirect("teste.jsp");
         }
     }
 
