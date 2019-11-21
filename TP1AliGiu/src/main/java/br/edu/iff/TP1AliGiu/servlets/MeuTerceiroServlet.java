@@ -49,7 +49,7 @@ public class MeuTerceiroServlet extends HttpServlet {
             user.setIdUsuario(id);
             
             Session SessionBD = HibernateUtil.getSession();
-            Transaction tr = SessionBD.getTransaction();
+            Transaction tr = SessionBD.beginTransaction();
             SessionBD.save(user);
             tr.commit();
             SessionBD.close();
