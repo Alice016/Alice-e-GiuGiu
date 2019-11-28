@@ -34,7 +34,7 @@
 <form oninput="x.value=parseInt(a.value)" action="MeuTerceiroServlet" method="post">
 
 <!-- DADOS PESSOAIS-->
-<fieldset>
+<%--fieldset>
  <legend>Dados Pessoais</legend>
   <div>
     <input type="hidden" name="oculto" value="emJs">
@@ -44,7 +44,7 @@
     <input type="text" name="sobrenome">
   </div>
   <br><br>
- <%-- div>
+ <div>
     <label>Nascimento: </label>
     <label for="data">Data de nascimento: </label> 
     <input type="date" name="data">
@@ -100,9 +100,9 @@
         <option value="php">PHP</option> 
         <option value="go">Go</option> 
         </select>
-    </div --%>
-  </fieldset>
-  <%-- fieldset>
+    </div>
+  </fieldset--%>
+   <fieldset>
     <legend>Dados de documentos</legend>
     <div>
     <label for="rg">RG: </label>
@@ -112,11 +112,10 @@
     <label>CPF:</label>
     <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
    </div>
-</fieldset>
-
+   </fieldset>
 <br />
 <!-- ENDEREÇO -->
-<fieldset>
+<%--fieldset>
  <legend>Dados de Endereço</legend>
  <div>
     <label for="rua">Rua:</label>
@@ -169,7 +168,7 @@
     <label for="cep">CEP: </label>
     <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
    </div>
-</fieldset --%>
+</fieldset 
 <br />
 
 <!-- DADOS DE LOGIN -->
@@ -218,8 +217,8 @@
    </td>
   </tr>
  </table>
-</fieldset>
-<br />
+</fieldset--%>
+</br>
 <input type="submit">
 <button formaction="http://localhost:3003/usuarios">Incluir</button>
 <button formaction="http://localhost:3003/usuarios2">Alterar</button>

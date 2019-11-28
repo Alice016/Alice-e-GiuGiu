@@ -10,6 +10,7 @@ import br.edu.iff.TP1AliGiu.utilidades.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import static javafx.beans.binding.Bindings.select;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,11 +37,11 @@ public class MeuTerceiroServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
-            String nomeCompleto = nome + " " + sobrenome;
+            select CAST nome = request.getParameter("nome");
+            select CAST sobrenome = request.getParameter("sobrenome");
+            select CAST nomeCompleto = nome + " " + sobrenome;
             System.out.println("Nome Completo: " + nomeCompleto);
-            String senha = request.getParameter("senha");
+            select CAST senha = request.getParameter("senha");
             Usuario user = new Usuario();
             user.setNome (nomeCompleto);
             user.setSenha (senha);
