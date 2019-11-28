@@ -102,7 +102,6 @@
         </select>
     </div>
   </fieldset--%>
-   <fieldset>
     <legend>Dados de documentos</legend>
     <div>
     <label for="rg">RG: </label>
@@ -112,10 +111,8 @@
     <label>CPF:</label>
     <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
    </div>
-   </fieldset>
 <br />
 <!-- ENDEREÇO -->
-<%--fieldset>
  <legend>Dados de Endereço</legend>
  <div>
     <label for="rua">Rua:</label>
@@ -217,7 +214,6 @@
    </td>
   </tr>
  </table>
-</fieldset--%>
 </br>
 <input type="submit">
 <button formaction="http://localhost:3003/usuarios">Incluir</button>

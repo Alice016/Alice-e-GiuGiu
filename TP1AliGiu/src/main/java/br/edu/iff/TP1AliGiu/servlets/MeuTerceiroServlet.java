@@ -11,10 +11,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import static javafx.beans.binding.Bindings.select;
+import static javafx.beans.binding.Bindings.select;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import static org.apache.commons.collections.CollectionUtils.select;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -23,6 +25,8 @@ import org.hibernate.Transaction;
  * @author aluno
  */
 public class MeuTerceiroServlet extends HttpServlet {
+
+    private String sobrenome;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,11 +41,11 @@ public class MeuTerceiroServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            select CAST nome = request.getParameter("nome");
-            select CAST sobrenome = request.getParameter("sobrenome");
-            select CAST nomeCompleto = nome + " " + sobrenome;
+String nome = request.getParameter("nome");
+             sobrenome = request.getParameter("sobrenome");
+            String nomeCompleto = nome + " " + sobrenome;
             System.out.println("Nome Completo: " + nomeCompleto);
-            select CAST senha = request.getParameter("senha");
+            String senha = request.getParameter("senha");
             Usuario user = new Usuario();
             user.setNome (nomeCompleto);
             user.setSenha (senha);
