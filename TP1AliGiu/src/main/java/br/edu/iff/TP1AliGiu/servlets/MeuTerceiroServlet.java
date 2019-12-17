@@ -40,25 +40,26 @@ public class MeuTerceiroServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         try (PrintWriter out = response.getWriter()) {
-String nome = request.getParameter("nome");
-             sobrenome = request.getParameter("sobrenome");
+            String nome = request.getParameter("nome");
+            sobrenome = request.getParameter("sobrenome");
             String nomeCompleto = nome + " " + sobrenome;
             System.out.println("Nome Completo: " + nomeCompleto);
             String senha = request.getParameter("senha");
             Usuario user = new Usuario();
-            user.setNome (nomeCompleto);
-            user.setSenha (senha);
+            user.setNome(nomeCompleto);
+            user.setSenha(senha);
             Double aleatorio = Math.random();
-            BigDecimal id = new BigDecimal (aleatorio);
+            BigDecimal id = new BigDecimal(aleatorio);
             user.setIdUsuario(id);
-            
+
             Session SessionBD = HibernateUtil.getSession();
             Transaction tr = SessionBD.beginTransaction();
             SessionBD.save(user);
             tr.commit();
             SessionBD.close();
-            
+
             response.sendRedirect("teste.jsp");
         }
     }
